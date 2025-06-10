@@ -443,7 +443,7 @@ MonoBehaviour:
   dissolveAmount: 0
   dissolveSpeed: 0.5
   isDissolving: 1
-  fadeOutColor: {r: 32, g: 4.2712107, b: 0, a: 1}
+  fadeOutColor: {r: 23.895561, g: 0, b: 3.9984279, a: 1}
   fadeInColor: {r: 0, g: 9.868561, b: 32, a: 1}
   mat: {fileID: 0}
 --- !u!1 &1367658168
