@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "PhyE.sln"
+    "dotnet.defaultSolution": "2d_dissolve.sln"
 }

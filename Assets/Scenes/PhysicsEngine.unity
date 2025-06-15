@@ -693,8 +693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b9262b4c9bb2c469d48d5bd435a659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRigitbody: {fileID: 807186846}
   bodyPhysics: {fileID: 905490591}
+  targetRigidbody: {fileID: 807186846}
 --- !u!4 &1349672958
 Transform:
   m_ObjectHideFlags: 0
