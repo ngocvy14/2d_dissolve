@@ -1,22 +1,20 @@
 using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
+using Utils;
 
-public class ObjectPool : MonoBehaviour
+public class ObjectPool : MonoSingleton<ObjectPool>
 {
-    // [SerializeField] GameObject ObjectToPool;
     public PooledObject[] objectsToPool;
-
+    
     [Serializable]
-
     public struct PooledObject
     {
         public string id;
         public GameObject gameObject;
         public int initialCount;
     }
-
+    
     private Dictionary<string, Queue<GameObject>> objectPoolInStock;
 
     private void Start()
@@ -30,23 +28,22 @@ public class ObjectPool : MonoBehaviour
         {
             objectPoolInStock = new Dictionary<string, Queue<GameObject>>();
         }
-        foreach (var PooledObject in objectsToPool)
+        foreach (var pooledObject in objectsToPool)
         {
-            if (!objectPoolInStock.ContainsKey(PooledObject.id))
+            if (!objectPoolInStock.ContainsKey(pooledObject.id))
             {
-                objectPoolInStock.Add(PooledObject.id, new Queue<GameObject>());
+                objectPoolInStock.Add(pooledObject.id, new Queue<GameObject>());
             }
-            for (var i = 0; i < PooledObject.initialCount; i++)
+            for (var i = 0; i < pooledObject.initialCount; i++)
             {
-                var obj = Instantiate(PooledObject.gameObject, transform);
+                var obj = Instantiate(pooledObject.gameObject, transform);
                 obj.SetActive(false);
-
-                objectPoolInStock[PooledObject.id].Enqueue(obj);
-
+                
+                objectPoolInStock[pooledObject.id].Enqueue(obj);
             }
         }
     }
-
+    
     public GameObject GetObject(string id)
     {
         if (objectPoolInStock.ContainsKey(id) && objectPoolInStock[id].Count > 0)
@@ -55,13 +52,14 @@ public class ObjectPool : MonoBehaviour
             obj.SetActive(true);
             return obj;
         }
-
-        var PooledObject = Array.Find(objectsToPool, o => o.id == id);
-        var outPut = Instantiate(PooledObject.gameObject, transform);
+        
+        // If no objects are available, log a warning and return null
+        var pooledObject = Array.Find(objectsToPool, o => o.id == id);
+        var outPut = Instantiate(pooledObject.gameObject, transform);
         outPut.SetActive(true);
         return outPut;
     }
-
+    
     public void ReturnObject(string id, GameObject obj)
     {
         if (objectPoolInStock.ContainsKey(id))
@@ -76,6 +74,4 @@ public class ObjectPool : MonoBehaviour
             objectPoolInStock[id].Enqueue(obj);
         }
     }
-
-
 }

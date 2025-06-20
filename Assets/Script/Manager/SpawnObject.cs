@@ -1,16 +1,24 @@
+using System;
 using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using Utils;
 
-public class SpawnObject : MonoBehaviour
+public class SpawnObject : MonoSingleton<SpawnObject>
 {
-    [SerializeField] private ObjectPool objectPool;
-    [SerializeField] private string pooledObjectId;
-    [SerializeField] private float currentX = 0;
+    private string pooledObjectId;
+
+    private ObjectPool objectPool;
+
+    private float currentX = 0;
+
+    void Start()
+    {
+        objectPool = ObjectPool.Instance;
+    }
 
     public void Spawn(string pooledObjectId)
     {
+        this.pooledObjectId = pooledObjectId;
         var go = objectPool.GetObject(pooledObjectId);
         if (go != null)
         {
@@ -22,10 +30,10 @@ public class SpawnObject : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("{pooledObjectId}");
+            Debug.LogWarning($"No object found with ID: {pooledObjectId}");
         }
-
     }
+    
     private IEnumerator ReturnObject(GameObject go)
     {
         yield return new WaitForSeconds(1f);
@@ -40,5 +48,4 @@ public class SpawnObject : MonoBehaviour
             Spawn(pooledObjectId);
         }
     }
-
 }
