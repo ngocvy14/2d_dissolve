@@ -43,9 +43,6 @@ public class SpawnObject : MonoSingleton<SpawnObject>
 
     private void OnGUI()
     {
-        if (GUILayout.Button("Spawn Object"))
-        {
-            Spawn(pooledObjectId);
-        }
+    
     }
 }
