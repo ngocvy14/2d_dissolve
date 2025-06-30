@@ -4,16 +4,16 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 78b8d78f1fe695940a8f59a83b305c71
+  productGUID: 1294f47d94984eb49b2c888d2dcac649
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: 2d_dissolve
+  productName: MyAR
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -42,8 +42,8 @@ PlayerSettings:
   m_SplashScreenLogos: []
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
-  defaultScreenWidth: 1920
-  defaultScreenHeight: 1080
+  defaultScreenWidth: 1024
+  defaultScreenHeight: 768
   defaultScreenWidthWeb: 960
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
@@ -69,7 +69,7 @@ PlayerSettings:
   disableDepthAndStencilBuffers: 0
   androidStartInFullscreen: 1
   androidRenderOutsideSafeArea: 1
-  androidUseSwappy: 1
+  androidUseSwappy: 0
   androidBlitType: 0
   androidResizeableActivity: 1
   androidDefaultWindowWidth: 1920
@@ -140,8 +140,12 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1.0
-  preloadedAssets: []
+  bundleVersion: 1.0.0
+  preloadedAssets:
+  - {fileID: 7409956309476867576, guid: 3fd4fc0127790db4bae83f7b77da8d45, type: 2}
+  - {fileID: 11400000, guid: c199e683398494f32b4cde18e73ab731, type: 2}
+  - {fileID: 4800000, guid: c9f956787b1d945e7b36e0516201fc76, type: 3}
+  - {fileID: 4800000, guid: 0945859e5a1034c2cb6dce53cb4fb899, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -163,15 +167,18 @@ PlayerSettings:
   androidMaxAspectRatio: 2.4
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.2D-URP
+    Android: com.unity.template.ar_mobile
+    Standalone: com.unity.template.ar-mobile
+    iPhone: com.unity.template.armobile
   buildNumber:
+    Bratwurst: 0
     Standalone: 0
     VisionOS: 0
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 23
+  AndroidMinSdkVersion: 30
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -250,8 +257,8 @@ PlayerSettings:
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
   shaderPrecisionModel: 0
-  clonedFromGUID: c19f32bac17ee4170b3bf8a6a0333fb9
-  templatePackageId: com.unity.template.universal-2d@5.1.0
+  clonedFromGUID: 069202b91adc77e41923adcf0d1b815b
+  templatePackageId: com.unity.template.ar-mobile@2.0.3
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   useCustomMainManifest: 0
   useCustomLauncherManifest: 0
@@ -287,12 +294,251 @@ PlayerSettings:
   AndroidReportGooglePlayAppDependencies: 1
   androidSymbolsSizeThreshold: 800
   m_BuildTargetIcons: []
-  m_BuildTargetPlatformIcons: []
+  m_BuildTargetPlatformIcons:
+  - m_BuildTarget: iPhone
+    m_Icons:
+    - m_Textures: []
+      m_Width: 180
+      m_Height: 180
+      m_Kind: 0
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 120
+      m_Height: 120
+      m_Kind: 0
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 167
+      m_Height: 167
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 152
+      m_Height: 152
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 76
+      m_Height: 76
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 120
+      m_Height: 120
+      m_Kind: 3
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 80
+      m_Height: 80
+      m_Kind: 3
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 80
+      m_Height: 80
+      m_Kind: 3
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 3
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 87
+      m_Height: 87
+      m_Kind: 1
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 58
+      m_Height: 58
+      m_Kind: 1
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 29
+      m_Height: 29
+      m_Kind: 1
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 58
+      m_Height: 58
+      m_Kind: 1
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 29
+      m_Height: 29
+      m_Kind: 1
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 60
+      m_Height: 60
+      m_Kind: 2
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 2
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 2
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 20
+      m_Height: 20
+      m_Kind: 2
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 1024
+      m_Height: 1024
+      m_Kind: 4
+      m_SubKind: App Store
+  - m_BuildTarget: Android
+    m_Icons:
+    - m_Textures: []
+      m_Width: 432
+      m_Height: 432
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 324
+      m_Height: 324
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 216
+      m_Height: 216
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 162
+      m_Height: 162
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 108
+      m_Height: 108
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 81
+      m_Height: 81
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 0
+      m_SubKind: 
+  - m_BuildTarget: tvOS
+    m_Icons:
+    - m_Textures: []
+      m_Width: 1280
+      m_Height: 768
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 800
+      m_Height: 480
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 400
+      m_Height: 240
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 4640
+      m_Height: 1440
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 2320
+      m_Height: 720
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 3840
+      m_Height: 1440
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 1920
+      m_Height: 720
+      m_Kind: 1
+      m_SubKind: 
+  - m_BuildTarget: VisionOS
+    m_Icons:
+    - m_Textures: []
+      m_Width: 1024
+      m_Height: 1024
+      m_Kind: 0
+      m_SubKind: 
   m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs: []
   m_BuildTargetGraphicsJobMode: []
-  m_BuildTargetGraphicsAPIs: []
+  m_BuildTargetGraphicsAPIs:
+  - m_BuildTarget: iOSSupport
+    m_APIs: 10000000
+    m_Automatic: 1
+  - m_BuildTarget: AndroidPlayer
+    m_APIs: 0b000000
+    m_Automatic: 0
   m_BuildTargetVRSettings: []
   m_DefaultShaderChunkSizeInMB: 16
   m_DefaultShaderChunkCount: 0
@@ -301,14 +547,17 @@ PlayerSettings:
   openGLRequireES32: 0
   m_TemplateCustomTags: {}
   mobileMTRendering:
-    Android: 1
-    iPhone: 1
+    Android: 0
+    iPhone: 0
     tvOS: 1
   m_BuildTargetGroupLightmapEncodingQuality: []
   m_BuildTargetGroupLightmapSettings: []
   m_BuildTargetGroupLoadStoreDebugModeSettings: []
   m_BuildTargetNormalMapEncoding: []
-  m_BuildTargetDefaultTextureCompressionFormat: []
+  m_BuildTargetDefaultTextureCompressionFormat:
+  - serializedVersion: 3
+    m_BuildTarget: Android
+    m_Formats: 01000000
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -316,7 +565,7 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: 
+  cameraUsageDescription: AR Camera
   locationUsageDescription: 
   microphoneUsageDescription: 
   bluetoothUsageDescription: 
@@ -460,7 +709,7 @@ PlayerSettings:
   switchNetworkInterfaceManagerInitializeEnabled: 1
   switchDisableHTCSPlayerConnection: 0
   switchUseNewStyleFilepaths: 0
-  switchUseLegacyFmodPriorities: 0
+  switchUseLegacyFmodPriorities: 1
   switchUseMicroSleepForYield: 1
   switchEnableRamDiskSupport: 0
   switchMicroSleepForYieldTime: 25
@@ -574,7 +823,8 @@ PlayerSettings:
   webGLWebAssemblyBigInt: 0
   webGLCloseOnQuit: 0
   webWasm2023: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    iPhone: UNITY_XR_ARKIT_LOADER_ENABLED
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -589,20 +839,20 @@ PlayerSettings:
   useDeterministicCompilation: 1
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
-  gcIncremental: 1
+  gcIncremental: 0
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform: {}
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: 2d_dissolve
+  metroPackageName: MyAR
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: 2d_dissolve
+  metroApplicationDescription: MyAR
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -614,7 +864,8 @@ PlayerSettings:
   metroDefaultTileSize: 1
   metroTileForegroundText: 2
   metroTileBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21568628, a: 0}
-  metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628, a: 1}
+  metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
+    a: 1}
   metroSplashScreenUseBackgroundColor: 0
   syncCapabilities: 0
   platformCapabilities: {}
@@ -665,18 +916,18 @@ PlayerSettings:
     m_VersionName: 
   hmiPlayerDataPath: 
   hmiForceSRGBBlit: 1
-  embeddedLinuxEnableGamepadInput: 0
+  embeddedLinuxEnableGamepadInput: 1
   hmiCpuConfiguration: 
   hmiLogStartupTiming: 0
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 2
+  activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 60d2ea26-eb32-4361-9ed4-0b2016c336c0
+  cloudProjectId: ffbd53f3-92fd-4e7e-9fa0-b7e0fb7147fd
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 2d_dissolve
+  projectName: MyAR
   organizationId: nvy1404
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
